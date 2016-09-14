@@ -1,0 +1,37 @@
+{
+  "name": "mfw-actionstore-angular",
+  "description": "MFW Action store module for AngularJS apps",
+  "authors": [
+    "Jordi Escudero Subirana <jordi.escudero@worldline.com> (https://github.com/jordiescudero)",
+    "Juan Belmonte Rodríguez <juan.belmonte@worldline.com> (https://github.com/jbelmonte)"
+  ],
+  "license": "Apache-2.0",
+  "main": [
+    "dist/mfw-business-action.store.min.js"
+  ],
+  "homepage": "https://github.com/worldline-spain/mfw-actionstore-angular",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/worldline-spain/mfw-actionstore-angular"
+  },
+  "keywords": [
+    "MFW",
+    "flux",
+    "action store",
+    "store",
+    "$mfwActionStore",
+    "$mfwActions"
+  ],
+  "moduleType": "globals",
+  "dependencies": {
+    "angular": "^1.3.11",
+    "flux-angular": "~2.6.0"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
