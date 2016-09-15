@@ -2,12 +2,12 @@
   "name": "mfw-actionstore-angular",
   "description": "MFW Action store module for AngularJS apps",
   "authors": [
-    "Jordi Escudero Subirana <jordi.escudero@worldline.com> (https://github.com/jordiescudero)",
-    "Juan Belmonte Rodríguez <juan.belmonte@worldline.com> (https://github.com/jbelmonte)"
+    "Juan Belmonte Rodríguez <juan.belmonte@worldline.com> (https://github.com/jbelmonte)",
+    "Jordi Escudero Subirana <jordi.escudero@worldline.com> (https://github.com/jordiescudero)"
   ],
   "license": "Apache-2.0",
   "main": [
-    "dist/mfw-business-action.store.min.js"
+    "dist/mfw-business-action.store.js"
   ],
   "homepage": "https://github.com/worldline-spain/mfw-actionstore-angular",
   "repository": {
