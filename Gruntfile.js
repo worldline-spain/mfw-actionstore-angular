@@ -51,7 +51,7 @@ module.exports = function (grunt) {
         startPage: '/api/mfw.business.action-store',
         title: false,
         html5Mode: false,
-        dest: './docs'
+        dest: 'docs'
       },
       api: {
         src: 'src/*.js',
@@ -62,21 +62,7 @@ module.exports = function (grunt) {
       options: {
         port: 9000,
         hostname: '0.0.0.0',
-        livereload: 35729,
-        middleware: function (connect, opts, middlewares) {
-          // inject a custom middleware into the array of default middlewares
-          middlewares.unshift(function (req, res, next) {
-            var context = '/';
-            if (req.url.indexOf(context) === 0) {
-              req.url = req.url.substring(context.length);
-              next();
-            } else {
-              res.writeHead(301, {Location: context + req.url});
-              res.end();
-            }
-          });
-          return middlewares;
-        }
+        livereload: 35729
       },
       docs: {
         options: {
@@ -148,8 +134,6 @@ module.exports = function (grunt) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
     }
-
-    target = target || 'local';
 
     grunt.task.run([
       'connect',

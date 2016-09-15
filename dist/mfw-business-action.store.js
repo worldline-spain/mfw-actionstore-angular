@@ -3,8 +3,8 @@
 
   /**
    * @ngdoc overview
-   * @module mfw.business.action-store
-   * @name mfw.business.action-store
+   * @module mfw.business.actionstore
+   * @name mfw.business.actionstore
    *
    * @requires flux
    *
@@ -16,7 +16,7 @@
    *
    * It relies on {@link https://github.com/christianalfoni/flux-angular flux-angular} as notification mechanism and storage.
    */
-  var ActionStoreModule = angular.module('mfw.business.action-store', [
+  var ActionStoreModule = angular.module('mfw.business.actionstore', [
     'flux'
   ]);
 
@@ -62,8 +62,8 @@
 
   /**
    * @ngdoc event
-   * @name mfw.business.action-store.service:$mfwActionStore#mfw:Action.<actionId>.<status>
-   * @eventOf mfw.business.action-store.service:$mfwActionStore
+   * @name mfw.business.actionstore.service:$mfwActionStore#mfw:Action.<actionId>.<status>
+   * @eventOf mfw.business.actionstore.service:$mfwActionStore
    * @eventType broadcast on $mfwActionStore
    *
    * @description
@@ -73,8 +73,8 @@
    */
   /**
    * @ngdoc event
-   * @name mfw.business.action-store.service:$mfwActionStore#mfw:Action.<status>.<actionId>
-   * @eventOf mfw.business.action-store.service:$mfwActionStore
+   * @name mfw.business.actionstore.service:$mfwActionStore#mfw:Action.<status>.<actionId>
+   * @eventOf mfw.business.actionstore.service:$mfwActionStore
    * @eventType broadcast on $mfwActionStore
    *
    * @description
@@ -86,28 +86,28 @@
 
   /**
    * @ngdoc service
-   * @name mfw.business.action-store.service:$mfwActions
+   * @name mfw.business.actionstore.service:$mfwActions
    *
    * @requires flux
-   * @requires mfw.business.action-store.service:$mfwActionStore
+   * @requires mfw.business.actionstore.service:$mfwActionStore
    *
    * @description
    * The `$mfwActions` service acts as an action creator for all your promises and dispatches processes
-   * to {@link mfw.business.action-store.service:$mfwActionStore `$mfwActionStore`}.
+   * to {@link mfw.business.actionstore.service:$mfwActionStore `$mfwActionStore`}.
    */
   ActionStoreModule.service('$mfwActions', ActionCreator);
   ActionCreator.$inject = ['$timeout', 'flux', '$mfwActionStore'];
   function ActionCreator($timeout, flux, $mfwActionStore) {
     /**
      * @ngdoc method
-     * @name mfw.business.action-store.service:$mfwActions#newAction
-     * @methodOf mfw.business.action-store.service:$mfwActions
+     * @name mfw.business.actionstore.service:$mfwActions#newAction
+     * @methodOf mfw.business.actionstore.service:$mfwActions
      *
      * @description
      * This method takes a promise and handles its lifecycle broadcasting
-     * {@link mfw.business.action-store.service:$mfwActionStore#events store events}.
+     * {@link mfw.business.actionstore.service:$mfwActionStore#events store events}.
      *
-     * It dispatches the `$mfwActionCreation` action handled by {@link mfw.business.action-store.service:$mfwActionStore `$mfwActionStore`}.
+     * It dispatches the `$mfwActionCreation` action handled by {@link mfw.business.actionstore.service:$mfwActionStore `$mfwActionStore`}.
      *
      * @param {Function|Promise} actionBody The promise or a function that returns a promise.
      * @returns {Promise} A wrapped promise with the same resolution/rejection process than the original one.
@@ -194,7 +194,7 @@
 
   /**
    * @ngdoc service
-   * @name mfw.business.action-store.service:$mfwActionStore
+   * @name mfw.business.actionstore.service:$mfwActionStore
    *
    * @requires $log
    *
@@ -202,11 +202,11 @@
    * This service takes care of all promises lifecycle and offers an API to ask for their status,
    * as well as notifying status changes via flux events:
    *
-   * * {@link mfw.business.action-store.service:$mfwActionStore#events `mfw:Action.<actionId>.<status>`}: events by action, useful to take care of an specific action status changes.
-   * * {@link mfw.business.action-store.service:$mfwActionStore#events `mfw:Action.<status>.<actionId>`}: events by status, useful for loggers and error handlers.
+   * * {@link mfw.business.actionstore.service:$mfwActionStore#events `mfw:Action.<actionId>.<status>`}: events by action, useful to take care of an specific action status changes.
+   * * {@link mfw.business.actionstore.service:$mfwActionStore#events `mfw:Action.<status>.<actionId>`}: events by status, useful for loggers and error handlers.
    *
    * Were `<actionId>` should be replaced by the action identifier associated to the created action. See
-   * {@link mfw.business.action-store.service:$mfwActionStore#methods_actionId `$mfwActionStore.actionId()`} for more information.
+   * {@link mfw.business.actionstore.service:$mfwActionStore#methods_actionId `$mfwActionStore.actionId()`} for more information.
    *
    * And `<status>` takes one of the following values:
    *
@@ -329,8 +329,8 @@
       exports: {
         /**
          * @ngdoc method
-         * @name mfw.business.action-store.service:$mfwActionStore#getAction
-         * @methodOf mfw.business.action-store.service:$mfwActionStore
+         * @name mfw.business.actionstore.service:$mfwActionStore#getAction
+         * @methodOf mfw.business.actionstore.service:$mfwActionStore
          *
          * @description
          * This method returns the associated `MfwAction` instance associated to the action promise.
@@ -342,8 +342,8 @@
         getAction: getAction,
         /**
          * @ngdoc method
-         * @name mfw.business.action-store.service:$mfwActionStore#actionId
-         * @methodOf mfw.business.action-store.service:$mfwActionStore
+         * @name mfw.business.actionstore.service:$mfwActionStore#actionId
+         * @methodOf mfw.business.actionstore.service:$mfwActionStore
          *
          * @description
          * This method returns the action identifier associated to the action promise.
@@ -355,8 +355,8 @@
         actionId: actionId,
         /**
          * @ngdoc method
-         * @name mfw.business.action-store.service:$mfwActionStore#allEvents
-         * @methodOf mfw.business.action-store.service:$mfwActionStore
+         * @name mfw.business.actionstore.service:$mfwActionStore#allEvents
+         * @methodOf mfw.business.actionstore.service:$mfwActionStore
          *
          * @description
          * This method returns the event identifier to be used in `$scope.$listenTo` method
@@ -381,8 +381,8 @@
         },
         /**
          * @ngdoc method
-         * @name mfw.business.action-store.service:$mfwActionStore#finishEvent
-         * @methodOf mfw.business.action-store.service:$mfwActionStore
+         * @name mfw.business.actionstore.service:$mfwActionStore#finishEvent
+         * @methodOf mfw.business.actionstore.service:$mfwActionStore
          *
          * @description
          * This method returns the event identifier to be used in `$scope.$listenTo` method
@@ -407,8 +407,8 @@
         },
         /**
          * @ngdoc method
-         * @name mfw.business.action-store.service:$mfwActionStore#errorEvent
-         * @methodOf mfw.business.action-store.service:$mfwActionStore
+         * @name mfw.business.actionstore.service:$mfwActionStore#errorEvent
+         * @methodOf mfw.business.actionstore.service:$mfwActionStore
          *
          * @description
          * This method returns the event identifier to be used in `$scope.$listenTo` method
