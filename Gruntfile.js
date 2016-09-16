@@ -48,7 +48,7 @@ module.exports = function (grunt) {
     },
     ngdocs: {
       options: {
-        startPage: '/api/mfw.business.action-store',
+        startPage: '/api/mfw.business.actionstore',
         title: false,
         html5Mode: false,
         dest: 'docs'
