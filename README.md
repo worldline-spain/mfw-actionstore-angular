@@ -1,4 +1,4 @@
-# MFW Action Store v1.0.0
+# MFW Action Store v1.0.1
 
 This AngularJS module provides a centralized storage and communication layer for async tasks as part of **Mobile FrameWork (MFW)**.
 
@@ -19,7 +19,7 @@ Register all your asynchronous actions and geet track of all of their changes:
 
 ### Via Bower
 
-Use repository URL and version tag until module is published in a Bower registry.
+Get module from Bower registry.
 
 ```shell
 $ bower install --save mfw-actionstore-angular
@@ -113,34 +113,43 @@ $scope.$listenTo($mfwActionStore, $mfwActionStore.errorEvent(), callback);
 ## Development
 
 * Use Gitflow
-* Update both package.json and bower.json versions
-* Tag Git with same version numbers as NPM and Bower versions
+* Update package.json version
+* Tag Git with same version numbers as NPM
 * Check for valid `ngDocs` output inside `docs/` folder
 
 > **Important**: Run `npm install` before anything. This will install NPM and Bower dependencies.
 
 > **Important**: Run `npm run deliver` before committing anything. This will build documentation and distribution files.
-> It's a shortcut for running both `docs` and `build` scritps.
+> It's a shortcut for running both `docs` and `build` scripts.
 
 ### NPM commands
 
 * Bower: install Bower dependencies in `bower_components/` folder:
+
 ```shell
 $ npm run bower
 ```
+
 * Build: build distributable binaries in `dist/` folder:
+
 ```shell
 $ npm run build
 ```
+
 * Documentation: generate user documentation (using `ngDocs`):
+
 ```shell
 $ npm run docs
 ```
+
 * Linting: run *linter* (currently JSHint):
+
 ```shell
 $ npm run lint
 ```
+
 * Deliver: **run it before committing to Git**. It's a shortcut for `docs` and `build` scripts:
+
 ```shell
 $ npm run deliver
 ```

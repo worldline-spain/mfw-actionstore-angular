@@ -249,7 +249,7 @@
         };
         this.state.actions[newAction.id] = newAction;
 
-        $log.log('> New action', newAction.id);
+        $log.debug('> New action', newAction.id);
 
         this.broadcastActionUpdate(newAction);
         return newAction.id;
@@ -263,7 +263,7 @@
        * @param {String} actionId The action identifier.
        */
       actionFinished: function actionFinished(actionId) {
-        $log.log('> Finished action', actionId);
+        $log.debug('> Finished action', actionId);
         this.setActionStatus(actionId, STATUS_FINISHED);
       },
       /**
@@ -276,7 +276,7 @@
        * @param {*} error Error information.
        */
       actionError: function actionError(actionId, error) {
-        $log.log('> Error in action', actionId);
+        $log.debug('> Error in action', actionId);
         this.setActionStatus(actionId, STATUS_ERROR, error);
       },
       /**
@@ -287,7 +287,7 @@
        * @returns {MfwAction} The action.
        */
       getAction: function getAction(actionId) {
-        $log.log('> Get action', actionId);
+        $log.debug('> Get action', actionId);
         return this.state.actions[actionId];
       },
       /**
@@ -301,7 +301,7 @@
       broadcastActionUpdate: function broadcastActionUpdate(action) {
         var actionId = action.id;
         var status = action.status;
-        $log.log('> Broadcast action update', actionId, 'with status', status);
+        $log.debug('> Broadcast action update', actionId, 'with status', status);
 
         // Different events
         this.emit(actionEvent(action, status), action);
@@ -318,7 +318,7 @@
        * @param {*=} data Additional information, like an error.
        */
       setActionStatus: function setActionStatus(actionId, status, data) {
-        $log.log('> Update action', actionId, 'with status', status, 'and data', data);
+        $log.debug('> Update action', actionId, 'with status', status, 'and data', data);
         angular.extend(this.state.actions[actionId], {
           status: status,
           data: data
