@@ -36,7 +36,7 @@ NG_DOCS={
   },
   "html5Mode": false,
   "editExample": true,
-  "startPage": "/api/mfw.business.action-store",
+  "startPage": "/api/mfw.business.actionstore",
   "scripts": [
     "angular.min.js"
   ]

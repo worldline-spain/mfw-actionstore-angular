@@ -1,4 +1,4 @@
-# MFW Action Store v1.0.0
+# MFW Action Store v1.0.1
 
 This AngularJS module provides a centralized storage and communication layer for async tasks as part of **Mobile FrameWork (MFW)**.
 
